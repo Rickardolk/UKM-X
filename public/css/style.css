@@ -14,7 +14,7 @@ body {
     color: #1a1a2e;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
     border-bottom: 1px solid #e8edf3;
 }
@@ -114,7 +114,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* Mosaic gambar*/
+/* Hero Mosaic image*/
 .hero-mosaic {
     position: relative;
     width: 358px;
@@ -128,7 +128,7 @@ body {
     border-radius: 14px;
 }
 
-/* Gambar 1 — kiri atas, W162 H212 */
+/* gambar 1 — kiri atas */
 .hero-mosaic .img-1 {
     width: 162px;
     height: 212px;
@@ -136,7 +136,7 @@ body {
     left: 0;
 }
 
-/* Gambar 2 — kanan atas, W180 H287 */
+/* gambar 2 — kanan atas*/
 .hero-mosaic .img-2 {
     width: 180px;
     height: 287px;
@@ -144,7 +144,7 @@ body {
     right: 0;
 }
 
-/* Gambar 3 — kiri bawah, W124 H195 */
+/* Gambar 3 — kiri bawah */
 .hero-mosaic .img-3 {
     width: 124px;
     height: 195px;
@@ -152,7 +152,7 @@ body {
     left: 0;
 }
 
-/* Gambar 4 — kanan bawah, W218 H120 */
+/* Gambar 4 — kanan bawah */
 .hero-mosaic .img-4 {
     width: 218px;
     height: 120px;
@@ -160,20 +160,21 @@ body {
     right: 0;
 }
 
-/* Gambar 5 — nautilus tengah, W176 H228 */
+/* gambar 5 — nautilus tengah */
 .hero-mosaic .img-5 {
     width: 176px;
     height: 228px;
-    left: 82px; /* (162 + 16/2) - 176/2 = 170 - 88 = 82 */
-    top: 97px; /* 423/2 - 228/2 = 211.5 - 114 = 97.5 */
+    left: 82px;
+    top: 97px;
     border-radius: 18px;
     border: 10px solid #fff;
-    /* box-shadow: 0 16px 48px rgba(0, 0, 0, 0.20); */
     z-index: 10;
     background: #f5f5f5;
 }
 
-/* Scale responsif */
+
+
+/* media query */
 @media (max-width: 1199px) {
     .hero-mosaic {
         transform: scale(0.9);
@@ -206,9 +207,8 @@ body {
     }
 }
 
-/* FOKUS KEILMUAN */
+/* fokus keilmuan section */
 .fokus-section {
-    /* background: var(--section-bg); */
     padding: 72px 0;
 }
 
@@ -231,7 +231,7 @@ body {
     color: var(--blue);
 }
 
-/* KEGIATAN */
+/* kegiatan */
 .kegiatan-section {
     background: var(--section-bg);
     padding: 64px 0;
@@ -271,7 +271,7 @@ body {
     color: var(--blue);
 }
 
-/* QUOTE */
+/* Quote */
 .quote-banner {
     background: var(--blue);
     padding: 48px 0;
@@ -286,7 +286,7 @@ body {
     padding-bottom: 10px;
 }
 
-/* VISI MISI */
+/* Visi Misi */
 .visi-misi-section {
     padding: 72px 0;
 }
@@ -329,9 +329,8 @@ body {
     margin-bottom: 8px;
 }
 
-/* PETUALANGAN */
+/* pertualangan */
 .pet-section {
-    /* background: var(--section-bg); */
     padding: 64px 0;
 }
 
@@ -343,7 +342,7 @@ body {
     display: block;
 }
 
-/* FOOTER */
+/* footer */
 footer {
     background: var(--blue);
     color: rgba(255, 255, 255, .7);

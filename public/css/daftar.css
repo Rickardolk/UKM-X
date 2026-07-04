@@ -1,0 +1,141 @@
+:root {
+    --daftar-blue: #2563EB;
+    --daftar-blue-dark: #1d4ed8;
+    --daftar-blue-soft: #EEF4FF;
+    --daftar-blue-icon: #2563EB;
+    --daftar-text: #111827;
+    --daftar-muted: #6B7280;
+    --daftar-border: #BFDBFE;
+    /* biru muda untuk border card */
+    --daftar-radius: 16px;
+}
+
+
+/* hero section */
+.daftar-hero {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.daftar-hero__title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 800;
+    letter-spacing: -.5px;
+    color: var(--daftar-text);
+    margin-bottom: .4rem;
+}
+
+.daftar-hero__desc {
+    font-size: .95rem;
+    color: var(--daftar-muted);
+    margin: 0;
+}
+
+
+/* daftar content */
+.daftar-content {
+    padding: 3rem 0 5rem;
+}
+
+
+/* card */
+.daftar-card {
+    max-width: 560px;
+    border: 2px solid var(--daftar-border);
+    border-radius: var(--daftar-radius);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    background: #fff;
+}
+
+/* icon */
+.daftar-card__icon {
+    font-size: 2.75rem;
+    color: var(--daftar-blue-icon);
+    margin-bottom: 1.1rem;
+    line-height: 1;
+}
+
+/* title */
+.daftar-card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--daftar-blue);
+    margin-bottom: .65rem;
+}
+
+/* desc */
+.daftar-card__desc {
+    font-size: .9rem;
+    color: var(--daftar-muted);
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0 auto 1.75rem;
+}
+
+/* -- action row -- */
+.daftar-card__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* primary button */
+.btn-daftar-primary {
+    background: var(--daftar-blue);
+    color: #fff;
+    font-size: .88rem;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: .55rem 1.4rem;
+    text-decoration: none;
+    transition: background .2s ease, transform .15s ease;
+    white-space: nowrap;
+}
+
+.btn-daftar-primary:hover {
+    background: var(--daftar-blue-dark);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* -- link button -- */
+.btn-daftar-link {
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--daftar-blue);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    transition: gap .2s ease, color .2s ease;
+    white-space: nowrap;
+}
+
+.btn-daftar-link:hover {
+    color: var(--daftar-blue-dark);
+    gap: .6rem;
+}
+
+
+/* Media Query */
+@media (max-width: 575.98px) {
+    .daftar-hero {
+        padding: 2rem 0 1.75rem;
+    }
+
+    .daftar-hero__title {
+        font-size: 1.6rem;
+    }
+
+    .daftar-card {
+        padding: 2.25rem 1.5rem;
+    }
+
+    .daftar-card__actions {
+        flex-direction: column;
+        gap: .85rem;
+    }
+}

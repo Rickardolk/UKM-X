@@ -6,16 +6,16 @@
 <section class="py-5">
     <div class="container py-4">
 
-        {{-- Heading --}}
+        <!-- header -->
         <div class="mb-5">
             <h1 class="fw-bold fs-2 text-dark mb-1">Alur SOP Peminjaman Alat</h1>
             <p class="text-muted">Alur prosedur untuk melakukan peminjaman peralatan riset</p>
         </div>
 
-        {{-- 3 Step Cards --}}
+        <!-- list card -->
         <div class="row g-4">
 
-            {{-- Card 1 --}}
+            <!-- Card 1 -->
             <div class="col-12 col-md-4">
                 <div class="card h-100 border border-primary rounded-4 text-center px-3 py-4 shadow-sm">
                     <div class="card-body d-flex flex-column align-items-center">
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            {{-- Card 2 --}}
+            <!-- card 2 -->
             <div class="col-12 col-md-4">
                 <div class="card h-100 border border-primary rounded-4 text-center px-3 py-4 shadow-sm">
                     <div class="card-body d-flex flex-column align-items-center">
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            {{-- Card 3 --}}
+            <!-- Card 3 -->
             <div class="col-12 col-md-4">
                 <div class="card h-100 border border-primary rounded-4 text-center px-3 py-4 shadow-sm">
                     <div class="card-body d-flex flex-column align-items-center">

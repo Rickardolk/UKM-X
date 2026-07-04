@@ -10,10 +10,30 @@
                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kegiatan</a>
+                    <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}" href="{{ route('kegiatan.index') }}">Kegiatan</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Arsip</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown {{ request()->is('arsip*') ? 'active' : '' }}" 
+                    href= "#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                        Arsip
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('arsip.index') ? 'active' : '' }}"
+                               href="{{ route('arsip.index') }}">
+                                Publikasi
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('arsip.index') ? 'active' : '' }}"
+                               href="{{ route('arsip.index') }}">
+                                Dokumentasi
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -30,14 +50,21 @@
                                href="{{ route('layanan.peminjaman') }}">
                                 SOP Peminjaman Alat
                             </a>
+                            <a class="dropdown-item {{ request()->routeIs('layanan.peminjaman') ? 'active' : '' }}"
+                               href="{{ route('layanan.peminjaman') }}">
+                                Pertanyaan Umum
+                            </a>
+                            <a class="dropdown-item {{ request()->routeIs('layanan.peminjaman') ? 'active' : '' }}"
+                               href="{{ route('layanan.peminjaman') }}">
+                                Kontak
+                            </a>
                         </li>
-                        {{-- Tambah menu layanan lain di sini nanti --}}
-                        {{-- <li><a class="dropdown-item" href="#">Layanan Lain</a></li> --}}
+                        <!-- {{-- <li><a class="dropdown-item" href="#">Layanan Lain</a></li> --}} -->
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pendaftaran</a>
+                    <a class="nav-link {{ request()->is('pendaftaran*') ? 'active' : '' }}" href="{{ route('pendaftaran.index') }}">Pendaftaran</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Profil</a>
