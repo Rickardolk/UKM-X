@@ -13,23 +13,23 @@
                     <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}" href="{{ route('kegiatan.index') }}">Kegiatan</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown {{ request()->is('arsip*') ? 'active' : '' }}" 
-                    href= "#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
+                    <a class="nav-link dropdown {{ request()->is('arsip*') ? 'active' : '' }}"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         Arsip
                     </a>
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item {{ request()->routeIs('arsip.index') ? 'active' : '' }}"
-                               href="{{ route('arsip.index') }}">
+                                href="{{ route('arsip.index') }}">
                                 Publikasi
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item {{ request()->routeIs('arsip.index') ? 'active' : '' }}"
-                               href="{{ route('arsip.index') }}">
+                            <a class="dropdown-item {{ request()->routeIs('arsip.dokumentasi*') ? 'active' : '' }}"
+                                href="{{ route('arsip.dokumentasi') }}">
                                 Dokumentasi
                             </a>
                         </li>
@@ -38,24 +38,24 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ request()->is('layanan*') ? 'active' : '' }}"
-                       href="#"
-                       role="button"
-                       data-bs-toggle="dropdown"
-                       aria-expanded="false">
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         Layanan
                     </a>
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item {{ request()->routeIs('layanan.peminjaman') ? 'active' : '' }}"
-                               href="{{ route('layanan.peminjaman') }}">
+                                href="{{ route('layanan.peminjaman') }}">
                                 SOP Peminjaman Alat
                             </a>
                             <a class="dropdown-item {{ request()->routeIs('layanan.peminjaman') ? 'active' : '' }}"
-                               href="{{ route('layanan.peminjaman') }}">
+                                href="{{ route('layanan.peminjaman') }}">
                                 Pertanyaan Umum
                             </a>
                             <a class="dropdown-item {{ request()->routeIs('layanan.peminjaman') ? 'active' : '' }}"
-                               href="{{ route('layanan.peminjaman') }}">
+                                href="{{ route('layanan.peminjaman') }}">
                                 Kontak
                             </a>
                         </li>

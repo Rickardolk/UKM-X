@@ -343,3 +343,367 @@
         padding: .28rem .8rem;
     }
 }
+
+
+
+
+/* detail-dokumentasi */
+.detail-dok {
+    padding: 2.5rem 0 3rem;
+}
+ 
+.btn-kembali {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    border: 1.5px solid var(--arsip-blue);
+    color: var(--arsip-blue);
+    background: #fff;
+    border-radius: 999px;
+    padding: .45rem 1.25rem;
+    font-size: .88rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: background var(--arsip-transition), color var(--arsip-transition);
+}
+ 
+.btn-kembali:hover {
+    background: var(--arsip-blue);
+    color: #fff;
+}
+ 
+.detail-dok__title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--arsip-text-dark);
+    margin-bottom: 1.75rem;
+    line-height: 1.25;
+}
+ 
+/* -- gallery -- */
+.detail-dok__gallery {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+ 
+.detail-dok__main-img {
+    border-radius: var(--arsip-card-radius);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+}
+ 
+.detail-dok__main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+ 
+.detail-dok__thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+ 
+.detail-dok__thumbs img {
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    object-fit: cover;
+    border-radius: var(--arsip-card-radius);
+    display: block;
+}
+ 
+/* -- info section -- */
+.detail-dok__info {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+ 
+.detail-dok__desc,
+.detail-dok__meta {
+    border-radius: var(--arsip-card-radius);
+    padding: 1.75rem 2rem;
+}
+ 
+.detail-dok__desc {
+    background: var(--arsip-blue-soft);
+}
+ 
+.detail-dok__desc h2,
+.detail-dok__meta h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--arsip-text-dark);
+    margin-bottom: 1rem;
+}
+ 
+.detail-dok__desc p {
+    font-style: italic;
+    color: var(--arsip-text-mid);
+    line-height: 1.75;
+    margin-bottom: 0;
+    font-size: .95rem;
+}
+ 
+.detail-dok__meta {
+    background: #fff;
+    border: 1px solid var(--arsip-border);
+    display: flex;
+    flex-direction: column;
+}
+ 
+.detail-dok__meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--arsip-border);
+}
+ 
+.detail-dok__meta-row:last-of-type {
+    border-bottom: none;
+}
+ 
+.detail-dok__meta-label {
+    color: var(--arsip-text-mid);
+    font-size: .9rem;
+}
+ 
+.detail-dok__meta-value {
+    font-style: italic;
+    color: var(--arsip-text-dark);
+    font-size: .92rem;
+    text-align: right;
+}
+ 
+.btn-download {
+    margin-top: 1.5rem;
+    background: var(--arsip-blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: .85rem 1.5rem;
+    font-weight: 600;
+    font-size: .95rem;
+    width: 100%;
+    transition: background var(--arsip-transition);
+}
+ 
+.btn-download:hover {
+    background: var(--arsip-blue-dark);
+    color: #fff;
+}
+ 
+/* -- CTA banner -- */
+.detail-dok__cta {
+    background: var(--arsip-bg-terbaru);
+    padding: 2.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--arsip-text-mid);
+}
+ 
+.detail-dok__cta a {
+    color: var(--arsip-blue);
+    font-weight: 600;
+    text-decoration: underline;
+}
+ 
+/* -- responsive -- */
+@media (max-width: 991.98px) {
+ 
+    .detail-dok__gallery,
+    .detail-dok__info {
+        grid-template-columns: 1fr;
+    }
+ 
+    .detail-dok__main-img {
+        min-height: 260px;
+    }
+}
+ 
+@media (max-width: 767.98px) {
+    .detail-dok__title {
+        font-size: 1.6rem;
+    }
+ 
+    .detail-dok__desc,
+    .detail-dok__meta {
+        padding: 1.25rem 1.4rem;
+    }
+ 
+    .detail-dok__thumbs img {
+        min-height: 120px;
+    }
+}
+
+
+
+
+/* detail-publikasi */
+ 
+.detail-pub {
+    padding: 2.5rem 0 3rem;
+}
+ 
+.detail-pub__tanggal {
+    color: var(--arsip-text-mid);
+    font-size: .88rem;
+    margin-bottom: .5rem;
+}
+ 
+.detail-pub__title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--arsip-text-dark);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+ 
+.detail-pub__penulis {
+    margin-bottom: 2rem;
+}
+ 
+.detail-pub__penulis-nama {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--arsip-text-dark);
+    margin-bottom: .2rem;
+}
+ 
+.detail-pub__penulis-sub {
+    font-size: .88rem;
+    color: var(--arsip-text-muted);
+}
+ 
+/* -- media: gambar + info -- */
+.detail-pub__media {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    align-items: stretch;
+}
+ 
+.detail-pub__img-wrap {
+    border-radius: var(--arsip-card-radius);
+    overflow: hidden;
+    min-height: 380px;
+}
+ 
+.detail-pub__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+ 
+.detail-pub__info {
+    background: #fff;
+    border: 1px solid var(--arsip-border);
+    border-radius: var(--arsip-card-radius);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.detail-pub__info h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--arsip-text-dark);
+    margin-bottom: 1rem;
+}
+ 
+.detail-pub__info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--arsip-border);
+}
+ 
+.detail-pub__info-row:last-of-type {
+    border-bottom: none;
+}
+ 
+.detail-pub__info-label {
+    color: var(--arsip-text-mid);
+    font-size: .9rem;
+}
+ 
+.detail-pub__info-value {
+    font-style: italic;
+    color: var(--arsip-text-dark);
+    font-size: .92rem;
+    text-align: right;
+}
+ 
+.detail-pub__baca {
+    margin-top: 1rem;
+    text-align: center;
+    display: block;
+    color: var(--arsip-blue);
+    font-weight: 600;
+    font-size: .92rem;
+    text-decoration: none;
+}
+ 
+.detail-pub__baca:hover {
+    color: var(--arsip-blue-dark);
+    text-decoration: underline;
+}
+ 
+/* -- abstrak -- */
+.detail-pub__abstrak {
+    background: var(--arsip-blue-soft);
+    border-radius: var(--arsip-card-radius);
+    padding: 1.75rem 2rem;
+}
+ 
+.detail-pub__abstrak h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--arsip-text-dark);
+    margin-bottom: 1rem;
+}
+ 
+.detail-pub__abstrak p {
+    font-style: italic;
+    color: var(--arsip-text-mid);
+    line-height: 1.75;
+    margin-bottom: 0;
+    font-size: .95rem;
+}
+ 
+/* -- responsive -- */
+@media (max-width: 991.98px) {
+    .detail-pub__media {
+        grid-template-columns: 1fr;
+    }
+ 
+    .detail-pub__img-wrap {
+        min-height: 260px;
+    }
+}
+ 
+@media (max-width: 767.98px) {
+    .detail-pub__title {
+        font-size: 1.6rem;
+    }
+ 
+    .detail-pub__info,
+    .detail-pub__abstrak {
+        padding: 1.25rem 1.4rem;
+    }
+}

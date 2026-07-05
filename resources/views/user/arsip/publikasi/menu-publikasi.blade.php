@@ -33,7 +33,7 @@
             'penulis' => 'Dr. Aris Pratama',
             'tanggal' => '12 Okt 2023',
             'kutipan' => 'Studi komprehensif mengenai tingkat regenerasi karang...',
-            'url' => '#',
+            'url' => route('arsip.publikasi.show'),
             ],
             [
             'img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
@@ -41,7 +41,7 @@
             'penulis' => 'Dr. Aris Pratama',
             'tanggal' => '12 Okt 2023',
             'kutipan' => 'Program penyelamatan kembali penyu di area...',
-            'url' => '#',
+            'url' => route('arsip.publikasi.show'),
             ],
             [
             'img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
@@ -49,7 +49,7 @@
             'penulis' => 'Dr. Aris Pratama',
             'tanggal' => '12 Okt 2023',
             'kutipan' => 'Program eksplorasi biota laut di area...',
-            'url' => '#',
+            'url' => route('arsip.publikasi.show'),
             ],
             [
             'img' => 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80',
@@ -57,14 +57,14 @@
             'penulis' => 'Dr. Aris Pratama',
             'tanggal' => '12 Okt 2023',
             'kutipan' => 'Program studi bintang laut di area...',
-            'url' => '#',
+            'url' => route('arsip.publikasi.show'),
             ],
             ];
             @endphp
 
             @foreach ($publikasiTerbaru as $pub)
             <div class="col-6 col-lg-3">
-                <div class="pub-card h-100">
+                <div class="pub-card h-100 position-relative">
                     <div class="pub-card__img-wrap">
                         <img
                             src="{{ $pub['img'] }}"
@@ -78,7 +78,7 @@
                         </p>
                         <h3 class="pub-card__title">{{ $pub['judul'] }}</h3>
                         <p class="pub-card__kutipan">{{ $pub['kutipan'] }}</p>
-                        <a href="{{ $pub['url'] }}" class="pub-card__link">
+                        <a href="{{ $pub['url'] }}" class="pub-card__link stretched-link">
                             Baca publikasi &rarr;
                         </a>
                     </div>
@@ -128,25 +128,25 @@
 
         @php
         $daftarPublikasi = [
-        ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'judul' => 'Pemetaan Penyebaran', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program penyelamatan kembali penyu di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&q=80', 'judul' => 'Analisis Ekosistem Biota', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Studi komprehensif mengenai tingkat regenerasi karang...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', 'judul' => 'Keanekaragaman Biota Pesisir', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program eksplorasi biota laut di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80', 'judul' => 'Studi Bintang laut', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program studi bintang laut di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80', 'judul' => 'Studi Bintang laut', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program studi bintang laut di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'judul' => 'Pemetaan Penyebaran', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program penyelamatan kembali penyu di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', 'judul' => 'Keanekaragaman Biota Pesisir', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program eksplorasi biota laut di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&q=80', 'judul' => 'Analisis Ekosistem Biota', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Studi komprehensif mengenai tingkat regenerasi karang...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&q=80', 'judul' => 'Analisis Ekosistem Biota', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Studi komprehensif mengenai tingkat regenerasi karang...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80', 'judul' => 'Studi Bintang laut', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program studi bintang laut di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'judul' => 'Pemetaan Penyebaran', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program penyelamatan kembali penyu di area...', 'url' => '#'],
-        ['img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', 'judul' => 'Keanekaragaman Biota Pesisir', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program eksplorasi biota laut di area...', 'url' => '#'],
+        ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'judul' => 'Pemetaan Penyebaran', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program penyelamatan kembali penyu di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&q=80', 'judul' => 'Analisis Ekosistem Biota', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Studi komprehensif mengenai tingkat regenerasi karang...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', 'judul' => 'Keanekaragaman Biota Pesisir', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program eksplorasi biota laut di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80', 'judul' => 'Studi Bintang laut', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program studi bintang laut di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80', 'judul' => 'Studi Bintang laut', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program studi bintang laut di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'judul' => 'Pemetaan Penyebaran', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program penyelamatan kembali penyu di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', 'judul' => 'Keanekaragaman Biota Pesisir', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program eksplorasi biota laut di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&q=80', 'judul' => 'Analisis Ekosistem Biota', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Studi komprehensif mengenai tingkat regenerasi karang...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&q=80', 'judul' => 'Analisis Ekosistem Biota', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Studi komprehensif mengenai tingkat regenerasi karang...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80', 'judul' => 'Studi Bintang laut', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program studi bintang laut di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'judul' => 'Pemetaan Penyebaran', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program penyelamatan kembali penyu di area...', 'url' => route('arsip.publikasi.show')],
+        ['img' => 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', 'judul' => 'Keanekaragaman Biota Pesisir', 'penulis' => 'Dr. Aris Pratama', 'tanggal' => '12 Okt 2023', 'kutipan' => 'Program eksplorasi biota laut di area...', 'url' => route('arsip.publikasi.show')],
         ];
         @endphp
 
         <div class="row g-3" id="daftarGrid">
             @foreach ($daftarPublikasi as $pub)
             <div class="col-6 col-lg-3">
-                <div class="pub-card h-100">
+                <div class="pub-card h-100 position-relative">
                     <div class="pub-card__img-wrap">
                         <img
                             src="{{ $pub['img'] }}"
@@ -160,7 +160,7 @@
                         </p>
                         <h3 class="pub-card__title">{{ $pub['judul'] }}</h3>
                         <p class="pub-card__kutipan">{{ $pub['kutipan'] }}</p>
-                        <a href="{{ $pub['url'] }}" class="pub-card__link">
+                        <a href="{{ $pub['url'] }}" class="pub-card__link stretched-link">
                             Baca publikasi &rarr;
                         </a>
                     </div>
