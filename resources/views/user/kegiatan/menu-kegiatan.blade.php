@@ -31,7 +31,7 @@
       'judul' => 'Restorasi Terumbu',
       'tgl' => '12 Okt 2026 – 14 Okt 2026',
       'desc' => 'Program penanaman kembali karang di area...',
-      'url' => '#',
+      'url' => route('kegiatan.show'),
       ],
       [
       'img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80',
@@ -39,7 +39,7 @@
       'judul' => 'Penyelamatan Penyu',
       'tgl' => '12 Okt 2026 – 14 Okt 2026',
       'desc' => 'Program penyelamatan kembali penyu di area...',
-      'url' => '#',
+      'url' => route('kegiatan.show'),
       ],
       [
       'img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
@@ -47,7 +47,7 @@
       'judul' => 'Eksplorasi biota laut',
       'tgl' => '12 Okt 2026 – 14 Okt 2026',
       'desc' => 'Program eksplorasi biota laut di area...',
-      'url' => '#',
+      'url' => route('kegiatan.show'),
       ],
       [
       'img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80',
@@ -55,14 +55,14 @@
       'judul' => 'Studi Bintang laut',
       'tgl' => '12 Okt 2026 – 14 Okt 2026',
       'desc' => 'Program studi bintang laut di area...',
-      'url' => '#',
+      'url' => route('kegiatan.show'),
       ],
       ];
       @endphp
 
       @foreach ($kegiatanBerjalan as $item)
       <div class="col">
-        <div class="card-kegiatan">
+        <div class="card-kegiatan position-relative">
           <div class="card-img-wrap">
             <img src="{{ $item['img'] }}" alt="{{ $item['alt'] }}" loading="lazy" />
           </div>
@@ -70,7 +70,7 @@
             <p class="card-date">{{ $item['tgl'] }}</p>
             <h3 class="card-title-text">{{ $item['judul'] }}</h3>
             <p class="card-desc">{{ $item['desc'] }}</p>
-            <a href="{{ $item['url'] }}" class="card-link">
+            <a href="{{ $item['url'] }}" class="card-link stretched-link">
               Lihat detail <i class="bi bi-arrow-right"></i>
             </a>
           </div>
@@ -115,25 +115,25 @@
 
     @php
     $daftarKegiatan = [
-    ['img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => '#', 'filter' => 'penyelamatan penyu'],
-    ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => '#', 'filter' => 'restorasi terumbu'],
-    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => '#', 'filter' => 'studi bintang laut'],
-    ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => '#', 'filter' => 'eksplorasi biota laut'],
-    ['img' => 'https://images.unsplash.com/photo-1618671257827-5b55b0cd8b40?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => '#', 'filter' => 'eksplorasi biota laut'],
-    ['img' => 'https://images.unsplash.com/photo-1560275619-4cc5fa59d3ae?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => '#', 'filter' => 'penyelamatan penyu'],
-    ['img' => 'https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => '#', 'filter' => 'restorasi terumbu'],
-    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => '#', 'filter' => 'studi bintang laut'],
-    ['img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => '#', 'filter' => 'penyelamatan penyu'],
-    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => '#', 'filter' => 'studi bintang laut'],
-    ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => '#', 'filter' => 'eksplorasi biota laut'],
-    ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => '#', 'filter' => 'restorasi terumbu'],
+    ['img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
+    ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
+    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
+    ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
+    ['img' => 'https://images.unsplash.com/photo-1618671257827-5b55b0cd8b40?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
+    ['img' => 'https://images.unsplash.com/photo-1560275619-4cc5fa59d3ae?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
+    ['img' => 'https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
+    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
+    ['img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
+    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
+    ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
+    ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
     ];
     @endphp
 
     <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="kegiatanGrid">
       @foreach ($daftarKegiatan as $item)
       <div class="col kegiatan-item" data-title="{{ $item['filter'] }}">
-        <div class="card-kegiatan">
+        <div class="card-kegiatan position-relative">
           <div class="card-img-wrap">
             <img src="{{ $item['img'] }}" alt="{{ $item['alt'] }}" loading="lazy" />
           </div>
@@ -141,7 +141,7 @@
             <p class="card-date">{{ $item['tgl'] }}</p>
             <h3 class="card-title-text">{{ $item['judul'] }}</h3>
             <p class="card-desc">{{ $item['desc'] }}</p>
-            <a href="{{ $item['url'] }}" class="card-link">
+            <a href="{{ $item['url'] }}" class="card-link stretched-link">
               Lihat detail <i class="bi bi-arrow-right"></i>
             </a>
           </div>
@@ -170,11 +170,6 @@
 </div>
 
 @endsection
-
-
-
-
-
 
 <!-- js -->
 @push('scripts')

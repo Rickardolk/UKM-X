@@ -317,3 +317,262 @@
         transition: none;
     }
 }
+
+
+
+
+
+/* detail-kegiatan */
+/* -- hero -- */
+.detail-keg__hero {
+    position: relative;
+    padding: 4.5rem 0 4rem;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.detail-keg__hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 30, 60, .35), rgba(10, 30, 60, .15));
+}
+
+.detail-keg__hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.detail-keg__kembali {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    border: 1.5px solid #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, .08);
+    border-radius: 999px;
+    padding: .45rem 1.25rem;
+    font-size: .88rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    transition: background .2s ease, color .2s ease;
+}
+
+.detail-keg__kembali:hover {
+    background: #fff;
+    color: var(--navy);
+}
+
+.detail-keg__title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: .5rem;
+}
+
+.detail-keg__subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .9);
+    margin: 0;
+}
+
+/* -- deskripsi -- */
+.detail-keg__desc-section {
+    padding: 3rem 0;
+    background: var(--white);
+}
+
+.detail-keg__desc-media {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.detail-keg__desc-img {
+    border-radius: var(--radius);
+    overflow: hidden;
+    min-height: 320px;
+}
+
+.detail-keg__desc-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.detail-keg__desc-text h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.detail-keg__desc-text p {
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: .95rem;
+    margin-bottom: 0;
+}
+
+/* -- jadwal kegiatan -- */
+.detail-keg__jadwal {
+    background: var(--blue-light);
+    padding: 3rem 0;
+}
+
+.jadwal-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.jadwal-item:last-child {
+    margin-bottom: 0;
+}
+
+.jadwal-item__date {
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.jadwal-item__date-day {
+    color: var(--blue);
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.jadwal-item__date-time {
+    color: var(--muted);
+    font-size: .82rem;
+}
+
+.jadwal-item__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.jadwal-item__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: .25rem;
+}
+
+.jadwal-item__desc {
+    font-size: .85rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+.jadwal-item__lokasi {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.jadwal-item__lokasi-label {
+    font-size: .8rem;
+    color: var(--muted);
+    margin-bottom: .15rem;
+}
+
+.jadwal-item__lokasi-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* -- tujuan & penanggung jawab -- */
+.detail-keg__info-grid {
+    padding: 3rem 0;
+    background: var(--white);
+}
+
+.detail-keg__info-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.detail-keg__info-block h2 {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.detail-keg__info-block h2 .icon {
+    font-size: 1.4rem;
+}
+
+.detail-keg__info-block p,
+.detail-keg__info-block ol {
+    color: var(--text);
+    line-height: 1.75;
+    font-size: .95rem;
+    margin: 0;
+}
+
+.detail-keg__info-block ol {
+    padding-left: 1.2rem;
+}
+
+/* -- CTA -- */
+.detail-keg__cta {
+    background: var(--blue-light);
+    padding: 2.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.detail-keg__cta a {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* -- responsive -- */
+@media (max-width: 991.98px) {
+
+    .detail-keg__desc-media,
+    .detail-keg__info-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-keg__desc-img {
+        min-height: 240px;
+    }
+
+    .jadwal-item {
+        flex-wrap: wrap;
+    }
+
+    .jadwal-item__lokasi {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .detail-keg__hero {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .jadwal-item {
+        padding: 1.2rem 1.4rem;
+    }
+}

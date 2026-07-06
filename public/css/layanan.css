@@ -1,0 +1,212 @@
+:root {
+    --layanan-blue: #2563eb;
+    --layanan-blue-dark: #1d4ed8;
+    --layanan-blue-soft: #eef4ff;
+    --layanan-bg-section: #eef3fc;
+    --layanan-text-dark: #111827;
+    --layanan-text-mid: #4b5563;
+    --layanan-text-muted: #6b7280;
+    --layanan-border: #e5e7eb;
+    --layanan-radius: 16px;
+    --layanan-transition: .2s ease;
+}
+
+/* ============ HERO (dipakai FAQ & halaman layanan lain) ============ */
+.layanan-hero {
+    padding: 3rem 0 2.5rem;
+}
+
+.layanan-hero__title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--layanan-text-dark);
+    margin-bottom: .5rem;
+}
+
+.layanan-hero__desc {
+    color: var(--layanan-text-mid);
+    font-size: .95rem;
+    margin: 0;
+}
+
+/* ============ FAQ SECTION ============ */
+.layanan-faq-section {
+    background: var(--layanan-bg-section);
+    padding: 3rem 0 3.5rem;
+}
+
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: var(--layanan-radius);
+    box-shadow: 0 2px 10px rgba(17, 24, 39, .05);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+}
+
+.faq-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.6rem 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-item__question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--layanan-text-dark);
+    margin: 0;
+}
+
+.faq-item__icon {
+    flex-shrink: 0;
+    color: var(--layanan-blue);
+    font-size: 1.2rem;
+    transition: transform var(--layanan-transition);
+}
+
+.faq-item.active .faq-item__icon {
+    transform: rotate(180deg);
+}
+
+.faq-item__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+}
+
+.faq-item__answer-inner {
+    padding: 0 2rem 1.75rem;
+    color: var(--layanan-text-mid);
+    font-size: .92rem;
+    line-height: 1.65;
+}
+
+.faq-item.active .faq-item__answer {
+    max-height: 400px;
+}
+
+/* -- CTA -- */
+.layanan-faq-cta {
+    text-align: center;
+    color: var(--layanan-text-mid);
+    font-size: .95rem;
+    margin-top: 2rem;
+}
+
+.layanan-faq-cta a {
+    color: var(--layanan-blue);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.layanan-faq-cta a:hover {
+    color: var(--layanan-blue-dark);
+}
+
+/* ============ SOP PEMINJAMAN (untuk sop-peminjaman.blade.php) ============ */
+.card.border-primary {
+    border-color: var(--layanan-blue) !important;
+    transition: box-shadow var(--layanan-transition), transform var(--layanan-transition);
+}
+
+.card.border-primary:hover {
+    box-shadow: 0 10px 26px rgba(37, 99, 235, .12);
+    transform: translateY(-3px);
+}
+
+.card.border-primary .bg-primary {
+    background-color: var(--layanan-blue) !important;
+}
+
+.card.border-primary a.text-primary {
+    color: var(--layanan-blue) !important;
+}
+
+.card.border-primary a.text-primary:hover {
+    color: var(--layanan-blue-dark) !important;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 767.98px) {
+    .layanan-hero__title {
+        font-size: 1.6rem;
+    }
+
+    .faq-item__header {
+        padding: 1.25rem 1.4rem;
+    }
+
+    .faq-item__answer-inner {
+        padding: 0 1.4rem 1.4rem;
+    }
+
+    .faq-item__question {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* ============ KONTAK KAMI ============ */
+.kontak-section {
+    background: var(--layanan-bg-section);
+    padding: 3rem 0 3.5rem;
+}
+ 
+.kontak-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+ 
+.kontak-card {
+    background: #fff;
+    border-radius: var(--layanan-radius);
+    width: 280px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(17, 24, 39, .05);
+    transition: transform var(--layanan-transition), box-shadow var(--layanan-transition);
+}
+ 
+.kontak-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(17, 24, 39, .08);
+}
+ 
+.kontak-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+ 
+.kontak-card--whatsapp .kontak-card__icon {
+    color: #25d366;
+}
+ 
+.kontak-card--instagram .kontak-card__icon {
+    color: #2563eb;
+}
+ 
+.kontak-card--email .kontak-card__icon {
+    color: var(--layanan-text-dark);
+}
+ 
+.kontak-card__label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--layanan-text-dark);
+    margin: 0;
+}

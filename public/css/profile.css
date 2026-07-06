@@ -1,0 +1,244 @@
+:root {
+    --profile-navy: #1a3a6b;
+    --profile-blue: #2563eb;
+    --profile-blue-light: #eef4ff;
+    --profile-text-dark: #111827;
+    --profile-text-mid: #4b5563;
+    --profile-text-muted: #6b7280;
+    --profile-border: #e5e7eb;
+    --profile-radius: 16px;
+    --profile-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+    --profile-transition: .2s ease;
+}
+
+/* ============ HERO ============ */
+.profile-hero {
+    padding: 3rem 0 2.5rem;
+}
+
+.profile-hero__title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--profile-text-dark);
+    margin-bottom: .5rem;
+}
+
+.profile-hero__desc {
+    color: var(--profile-text-mid);
+    font-size: .95rem;
+    margin: 0;
+}
+
+/* ============ SEJARAH ============ */
+.profile-sejarah {
+    padding: 1rem 0 3.5rem;
+    background: #fff;
+}
+
+.profile-sejarah__media {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.profile-sejarah__img {
+    border-radius: var(--profile-radius);
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.profile-sejarah__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-sejarah__text h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--profile-text-dark);
+    margin-bottom: 1rem;
+}
+
+.profile-sejarah__text p {
+    color: var(--profile-text-mid);
+    line-height: 1.75;
+    font-size: .92rem;
+    margin-bottom: 1rem;
+}
+
+.profile-sejarah__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============ STRUKTUR ORGANISASI ============ */
+.profile-struktur {
+    background: var(--profile-blue-light);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.profile-struktur__title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--profile-text-dark);
+    margin-bottom: 2rem;
+}
+
+.profile-struktur__img-wrap {
+    background: #fff;
+    border-radius: var(--profile-radius);
+    box-shadow: var(--profile-shadow);
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.profile-struktur__img-wrap img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ============ KELAS KEILMUAN ============ */
+.profile-kelas {
+    padding: 3.5rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.profile-kelas__title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--profile-text-dark);
+    margin-bottom: 2.5rem;
+}
+
+.kelas-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.kelas-card {
+    border: 1.5px solid var(--profile-blue);
+    border-radius: var(--profile-radius);
+    padding: 2rem 1.5rem;
+    width: 260px;
+    text-align: center;
+    transition: box-shadow var(--profile-transition), transform var(--profile-transition);
+}
+
+.kelas-card:hover {
+    box-shadow: 0 10px 26px rgba(37, 99, 235, .12);
+    transform: translateY(-3px);
+}
+
+.kelas-card__img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1.25rem;
+}
+
+.kelas-card__label {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--profile-text-dark);
+    margin: 0;
+}
+
+/* ============ PROGRAM KERJA ============ */
+.profile-program {
+    background: var(--profile-blue-light);
+    padding: 3.5rem 0;
+    text-align: center;
+}
+
+.profile-program__title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--profile-text-dark);
+    margin-bottom: 2.5rem;
+}
+
+.program-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.program-card {
+    background: #fff;
+    border-radius: var(--profile-radius);
+    overflow: hidden;
+    box-shadow: var(--profile-shadow);
+    transition: transform var(--profile-transition), box-shadow var(--profile-transition);
+}
+
+.program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .1);
+}
+
+.program-card__img-wrap {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.program-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.program-card__body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.program-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--profile-text-dark);
+    margin-bottom: .4rem;
+}
+
+.program-card__desc {
+    font-size: .85rem;
+    color: var(--profile-text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 991.98px) {
+    .profile-sejarah__media {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-sejarah__img {
+        min-height: 240px;
+    }
+
+    .program-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .program-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .kelas-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}

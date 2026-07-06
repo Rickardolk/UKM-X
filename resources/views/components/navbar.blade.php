@@ -50,12 +50,16 @@
                                 href="{{ route('layanan.peminjaman') }}">
                                 SOP Peminjaman Alat
                             </a>
-                            <a class="dropdown-item {{ request()->routeIs('layanan.peminjaman') ? 'active' : '' }}"
-                                href="{{ route('layanan.peminjaman') }}">
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('layanan.faq') ? 'active' : '' }}"
+                                href="{{ route('layanan.faq') }}">
                                 Pertanyaan Umum
                             </a>
-                            <a class="dropdown-item {{ request()->routeIs('layanan.peminjaman') ? 'active' : '' }}"
-                                href="{{ route('layanan.peminjaman') }}">
+                        </li>
+                        <li>
+                            <a class="dropdown-item {{ request()->routeIs('layanan.kontak') ? 'active' : '' }}"
+                                href="{{ route('layanan.kontak') }}">
                                 Kontak
                             </a>
                         </li>
@@ -67,7 +71,7 @@
                     <a class="nav-link {{ request()->is('pendaftaran*') ? 'active' : '' }}" href="{{ route('pendaftaran.index') }}">Pendaftaran</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profil</a>
+                    <a class="nav-link {{ request()->routeIs('profil.index') ? 'active' : '' }}" href="{{ route('profil.index') }}">Profil</a>
                 </li>
             </ul>
             <a href="#" class="btn-masuk ms-lg-3 mt-2 mt-lg-0 text-decoration-none d-inline-block text-center">Masuk</a>
