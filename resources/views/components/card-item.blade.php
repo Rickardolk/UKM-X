@@ -1,35 +1,3 @@
-{{--
-    Component: <x-card-item>
-    Dipakai di: menu-kegiatan, menu-publikasi, menu-dokumentasi
-    (struktur sama: gambar + meta + judul + deskripsi opsional + link,
-    hanya beda nama class CSS per halaman — makanya ada prop $variant)
-
-    Props:
-    - variant   : 'kegiatan' | 'arsip'   (default: 'arsip')
-    - img       : url gambar
-    - alt       : alt text gambar
-    - meta      : teks kecil di atas judul (tanggal / penulis • tanggal). null = disembunyikan
-    - title     : judul card
-    - desc      : deskripsi/kutipan di bawah judul. null = disembunyikan
-    - url       : link tujuan card
-    - linkText  : teks link (default "Lihat detail")
-
-    Contoh pakai (kegiatan):
-    <x-card-item variant="kegiatan" :img="$item['img']" :alt="$item['alt']"
-        :meta="$item['tgl']" :title="$item['judul']" :desc="$item['desc']"
-        :url="$item['url']" link-text="Lihat detail" />
-
-    Contoh pakai (publikasi):
-    <x-card-item :img="$pub['img']" :alt="$pub['judul']"
-        :meta="$pub['penulis'] . ' • ' . $pub['tanggal']" :title="$pub['judul']"
-        :desc="$pub['kutipan']" :url="$pub['url']" link-text="Baca publikasi" />
-
-    Contoh pakai (dokumentasi, tanpa desc):
-    <x-card-item :img="$dok['img']" :alt="$dok['judul']"
-        :meta="$dok['tanggal']" :title="$dok['judul']"
-        :url="$dok['url']" link-text="Lihat Dokumentasi" />
---}}
-
 @props([
 'variant' => 'arsip',
 'img',

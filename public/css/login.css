@@ -1,63 +1,105 @@
-/* public/css/login.css */
+:root {
+    --auth-bg: #EAF2FE;
+    --auth-blue: #2563EB;
+    --auth-blue-dark: #1D4ED8;
+    --auth-input-bg: #EEF3FB;
+    --auth-input-border: #D7E3F5;
+    --auth-text-dark: #111827;
+    --auth-text-mid: #4B5563;
+    --auth-radius: 16px;
+}
 
-body {
-    background-color: #F0F6FF; /* Menggunakan variabel --surface */
-    height: 100vh;
+.auth-page {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+    background: var(--auth-bg);
+    padding: 2rem 1rem;
 }
 
-.login-card {
-    background: #FFFFFF;
-    padding: 40px;
-    border-radius: 12px;
+.auth-card {
+    background: #fff;
+    border-radius: var(--auth-radius);
+    padding: 3.75rem 3.73rem 4.9375rem 3.75rem;
+    max-width: 460px;
     width: 100%;
-    max-width: 450px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(17, 24, 39, .06);
 }
 
-.login-card h2 {
+.auth-card__title {
+    font-size: 1.5rem;
     font-weight: 800;
-    color: #111827;
+    text-align: center;
+    color: var(--auth-text-dark);
+    margin-bottom: 0.5rem;
 }
 
-.login-card .text-muted {
-    font-size: 0.9rem;
+.auth-card__desc {
+    text-align: center;
+    color: var(--auth-text-mid);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
 }
 
-.form-label {
-    font-size: 0.95rem;
+.auth-field {
+    margin-bottom: 1rem;
+}
+
+.auth-field label {
+    display: block;
     font-weight: 600;
-    color: #374151;
+    font-size: .875rem;
+    color: var(--auth-text-dark);
+    margin-bottom: .5rem;
 }
 
-.form-control {
-    background-color: #F0F6FF;
-    border: 1px solid #E5E7EB;
-    padding: 12px;
-    border-radius: 8px;
-}
-
-.form-control:focus {
-    border-color: #2563EB;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.btn-masuk-admin {
-    background-color: #2563EB;
-    color: #ffffff;
-    border: none;
+.auth-field input {
     width: 100%;
-    padding: 12px;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: background 0.2s;
+    background: var(--auth-input-bg);
+    border: 1px solid var(--auth-input-border);
+    border-radius: 999px;
+    padding: .75rem 1.35rem;
+    font-size: 1rem;
+    color: var(--auth-text-dark);
+    transition: border-color .2s ease, background .2s ease;
 }
 
-.btn-masuk-admin:hover {
-    background-color: #1d4ed8;
-    color: #ffffff;
+.auth-field input:focus {
+    outline: none;
+    border-color: var(--auth-blue);
+    background: #fff;
+}
+
+.auth-field input::placeholder {
+    color: #8b96a3;
+}
+
+.btn-auth-submit {
+    width: 100%;
+    background: var(--auth-blue);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: .75rem;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: .5rem;
+    transition: background .2s ease;
+}
+
+.btn-auth-submit:hover {
+    background: var(--auth-blue-dark);
+    color: #fff;
+}
+
+@media (max-width: 575.98px) {
+    .auth-card {
+        padding: 2.25rem 1.5rem;
+    }
+
+    .auth-card__title {
+        font-size: 1.6rem;
+    }
 }

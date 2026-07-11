@@ -65,3 +65,8 @@ Route::get('/profil', function () {
 Route::get('/admin/login', function () {
     return view('admin.login');
 })->name('admin.login');
+
+//admin-dashboard
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');

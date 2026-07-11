@@ -1,20 +1,3 @@
-{{--
-    Component: <x-search-box>
-    Dipakai di: menu-kegiatan (variant="kegiatan"), menu-publikasi & menu-dokumentasi (default)
-
-    Props:
-    - variant     : 'kegiatan' | 'arsip' (default 'arsip')
-    - id          : id input (untuk aria-label / referensi JS spesifik jika perlu)
-    - placeholder : placeholder text
-    - jsHook      : class tambahan untuk dikait JS generik (arsip.js pakai '.js-arsip-search')
-
-    Contoh (kegiatan):
-    <x-search-box variant="kegiatan" id="searchInput" placeholder="Cari Kegiatan" />
-
-    Contoh (arsip):
-    <x-search-box id="searchPublikasi" placeholder="Cari Publikasi" js-hook="js-arsip-search" />
---}}
-
 @props([
 'variant' => 'arsip',
 'id' => 'searchInput',
