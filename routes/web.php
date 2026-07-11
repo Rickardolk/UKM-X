@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminDokumentasiController;
+use App\Http\Controllers\AdminPublikasiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -60,3 +64,26 @@ Route::get('/kegiatan/eksplorasi-biota-laut', function () {
 Route::get('/profil', function () {
     return view('user.profile');
 })->name('profil.index');
+
+// Login (publik)
+Route::get('/admin/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login.post');
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/publikasi', [AdminPublikasiController::class, 'index'])->name('publikasi.index');
+
+    Route::get('/publikasi/create', [AdminPublikasiController::class, 'create'])->name('publikasi.create');
+    Route::post('/publikasi', [AdminPublikasiController::class, 'store'])->name('publikasi.store');
+
+    Route::get('/publikasi/{id}/edit', [AdminPublikasiController::class, 'edit'])->name('publikasi.edit');
+    Route::put('/publikasi/{id}',      [AdminPublikasiController::class, 'update'])->name('publikasi.update');
+
+    Route::get('/dokumentasi',      [AdminDokumentasiController::class,  'index'])->name('dokumentasi.index');
+
+    Route::get('/dokumentasi/create', [AdminDokumentasiController::class, 'create'])->name('dokumentasi.create');
+    Route::post('/dokumentasi',       [AdminDokumentasiController::class, 'store'])->name('dokumentasi.store');
+});
