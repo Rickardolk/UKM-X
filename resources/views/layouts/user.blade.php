@@ -29,7 +29,10 @@
         @yield('content')
     </main>
 
-    @include('components.footer')
+    <!-- @include('components.footer') -->
+     @if (!View::hasSection('hide_footer'))
+        @include('components.footer')
+    @endif
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

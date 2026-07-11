@@ -37,7 +37,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->is('layanan*') ? 'active' : '' }}"
+                    <a class="nav-link {{ request()->is('layanan*') ? 'active' : '' }}"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -74,7 +74,7 @@
                     <a class="nav-link {{ request()->routeIs('profil.index') ? 'active' : '' }}" href="{{ route('profil.index') }}">Profil</a>
                 </li>
             </ul>
-            <a href="#" class="btn-masuk ms-lg-3 mt-2 mt-lg-0 text-decoration-none d-inline-block text-center">Masuk</a>
+            <a href="{{ route('admin.login') }}" class="btn-masuk ms-lg-3 mt-2 mt-lg-0 text-decoration-none d-inline-block text-center">Masuk</a>
         </div>
     </div>
 </nav>

@@ -8,7 +8,7 @@
 
 @section('content')
 
-<!-- Hero Section -->
+<!-- Hero section -->
 <section class="arsip-hero">
     <div class="container">
         <h1 class="arsip-hero__title">Dokumentasi Kegiatan</h1>
@@ -19,7 +19,7 @@
     </div>
 </section>
 
-<!-- dokumentasi terbaru -->
+<!-- Dokumentasi terbaru -->
 <section class="arsip-terbaru">
     <div class="container">
         <h2 class="arsip-section__heading">Dokumentasi terbaru</h2>
@@ -56,22 +56,13 @@
 
             @foreach ($dokumentasiTerbaru as $dok)
             <div class="col-6 col-lg-3">
-                <div class="pub-card h-100 position-relative">
-                    <div class="pub-card__img-wrap">
-                        <img
-                            src="{{ $dok['img'] }}"
-                            alt="{{ $dok['judul'] }}"
-                            class="pub-card__img"
-                            loading="lazy" />
-                    </div>
-                    <div class="pub-card__body">
-                        <p class="pub-card__meta">{{ $dok['tanggal'] }}</p>
-                        <h3 class="pub-card__title">{{ $dok['judul'] }}</h3>
-                        <a href="{{ $dok['url'] }}" class="pub-card__link stretched-link">
-                            Lihat Dokumentasi &rarr;
-                        </a>
-                    </div>
-                </div>
+                <x-card-item
+                    :img="$dok['img']"
+                    :alt="$dok['judul']"
+                    :meta="$dok['tanggal']"
+                    :title="$dok['judul']"
+                    :url="$dok['url']"
+                    link-text="Lihat Dokumentasi" />
             </div>
             @endforeach
         </div>
@@ -83,28 +74,14 @@
     <div class="container">
         <div class="arsip-filter__bar">
 
-            {{-- Filter chips --}}
-            <div class="arsip-filter__chips">
-                <button type="button" class="filter-chip active" data-filter="semua">Semua</button>
-                <button type="button" class="filter-chip" data-filter="eksplorasi">Eksplorasi</button>
-                <button type="button" class="filter-chip" data-filter="studi">Studi</button>
-                <button type="button" class="filter-chip" data-filter="edukasi">Edukasi</button>
-            </div>
+            <x-filter-buttons :options="[
+                ['label' => 'Semua', 'filter' => 'semua', 'active' => true],
+                ['label' => 'Eksplorasi', 'filter' => 'eksplorasi'],
+                ['label' => 'Studi', 'filter' => 'studi'],
+                ['label' => 'Edukasi', 'filter' => 'edukasi'],
+            ]" />
 
-            {{-- Search --}}
-            <div class="arsip-filter__search">
-                <div class="input-group">
-                    <span class="input-group-text">
-                        <i class="bi bi-search"></i>
-                    </span>
-                    <input
-                        type="text"
-                        id="searchDokumentasi"
-                        class="form-control"
-                        placeholder="Cari Dokumentasi"
-                        autocomplete="off" />
-                </div>
-            </div>
+            <x-search-box id="searchDokumentasi" placeholder="Cari Dokumentasi" js-hook="js-arsip-search" />
 
         </div>
     </div>
@@ -135,89 +112,25 @@
         <div class="row g-3" id="daftarGrid">
             @foreach ($daftarDokumentasi as $dok)
             <div class="col-6 col-lg-3" data-kategori="{{ $dok['kategori'] }}">
-                <div class="pub-card h-100 position-relative">
-                    <div class="pub-card__img-wrap">
-                        <img
-                            src="{{ $dok['img'] }}"
-                            alt="{{ $dok['judul'] }}"
-                            class="pub-card__img"
-                            loading="lazy" />
-                    </div>
-                    <div class="pub-card__body">
-                        <p class="pub-card__meta">{{ $dok['tanggal'] }}</p>
-                        <h3 class="pub-card__title">{{ $dok['judul'] }}</h3>
-                        <a href="{{ $dok['url'] }}" class="pub-card__link stretched-link">
-                            Lihat Dokumentasi &rarr;
-                        </a>
-                    </div>
-                </div>
+                <x-card-item
+                    :img="$dok['img']"
+                    :alt="$dok['judul']"
+                    :meta="$dok['tanggal']"
+                    :title="$dok['judul']"
+                    :url="$dok['url']"
+                    link-text="Lihat Dokumentasi" />
             </div>
             @endforeach
         </div>
 
-        <!-- Pagination -->
-        <nav class="arsip-pagination" aria-label="Navigasi halaman dokumentasi">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Sebelumnya">
-                        <i class="bi bi-chevron-left"></i>
-                    </a>
-                </li>
-                <li class="page-item active" aria-current="page">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Berikutnya">
-                        <i class="bi bi-chevron-right"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <x-pagination :total-pages="4" aria-label="Navigasi halaman dokumentasi" />
 
     </div>
 </section>
 
 @endsection
 
-<!-- script -->
+<!-- js -->
 @push('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        /* ---- Filter chip active + kategori filter ---- */
-        const chips = document.querySelectorAll('.filter-chip');
-        const cards = document.querySelectorAll('#daftarGrid [data-kategori]');
-
-        chips.forEach(function(chip) {
-            chip.addEventListener('click', function() {
-                chips.forEach(function(c) {
-                    c.classList.remove('active');
-                });
-                chip.classList.add('active');
-
-                const filter = chip.dataset.filter;
-                cards.forEach(function(col) {
-                    const kategori = col.dataset.kategori;
-                    col.style.display = (filter === 'semua' || kategori === filter) ? '' : 'none';
-                });
-            });
-        });
-
-        /* ---- Live search ---- */
-        const searchInput = document.getElementById('searchDokumentasi');
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                const q = this.value.toLowerCase().trim();
-                cards.forEach(function(col) {
-                    const judul = col.querySelector('.pub-card__title')?.textContent.toLowerCase() ?? '';
-                    col.style.display = (q === '' || judul.includes(q)) ? '' : 'none';
-                });
-            });
-        }
-
-    });
-</script>
+<script src="{{ asset('js/arsip.js') }}"></script>
 @endpush

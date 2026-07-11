@@ -1,0 +1,63 @@
+/* public/css/login.css */
+
+body {
+    background-color: #F0F6FF; /* Menggunakan variabel --surface */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.login-card {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.login-card h2 {
+    font-weight: 800;
+    color: #111827;
+}
+
+.login-card .text-muted {
+    font-size: 0.9rem;
+}
+
+.form-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-control {
+    background-color: #F0F6FF;
+    border: 1px solid #E5E7EB;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-masuk-admin {
+    background-color: #2563EB;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.btn-masuk-admin:hover {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}

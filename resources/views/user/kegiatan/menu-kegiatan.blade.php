@@ -8,7 +8,7 @@
 
 @section('content')
 
-<!-- header -->
+<!-- HEader -->
 <section class="page-header">
   <div class="container">
     <h1>Informasi Kegiatan</h1>
@@ -16,12 +16,12 @@
   </div>
 </section>
 
-<!-- Kegiatan Sedang berjalan -->
+<!-- Ongoing Section -->
 <section class="section-ongoing">
   <div class="container">
     <h2 class="section-title">Kegiatan Sedang Berjalan</h2>
 
-    <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-lg-4">
+    <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-lg-4">
 
       @php
       $kegiatanBerjalan = [
@@ -34,7 +34,7 @@
       'url' => route('kegiatan.show'),
       ],
       [
-      'img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80',
+      'img' => 'https://images.unsplash.com/photo-1615441000196-cae8adec6ebe?q=80&w=764',
       'alt' => 'Penyelamatan Penyu',
       'judul' => 'Penyelamatan Penyu',
       'tgl' => '12 Okt 2026 – 14 Okt 2026',
@@ -42,7 +42,7 @@
       'url' => route('kegiatan.show'),
       ],
       [
-      'img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
+      'img' => 'https://plus.unsplash.com/premium_photo-1710673365954-4f943feb75ec?q=80&w=1074',
       'alt' => 'Eksplorasi Biota Laut',
       'judul' => 'Eksplorasi biota laut',
       'tgl' => '12 Okt 2026 – 14 Okt 2026',
@@ -50,7 +50,7 @@
       'url' => route('kegiatan.show'),
       ],
       [
-      'img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80',
+      'img' => 'https://plus.unsplash.com/premium_photo-1694250866050-6153c23d112e?q=80&w=881',
       'alt' => 'Studi Bintang Laut',
       'judul' => 'Studi Bintang laut',
       'tgl' => '12 Okt 2026 – 14 Okt 2026',
@@ -62,19 +62,15 @@
 
       @foreach ($kegiatanBerjalan as $item)
       <div class="col">
-        <div class="card-kegiatan position-relative">
-          <div class="card-img-wrap">
-            <img src="{{ $item['img'] }}" alt="{{ $item['alt'] }}" loading="lazy" />
-          </div>
-          <div class="card-body">
-            <p class="card-date">{{ $item['tgl'] }}</p>
-            <h3 class="card-title-text">{{ $item['judul'] }}</h3>
-            <p class="card-desc">{{ $item['desc'] }}</p>
-            <a href="{{ $item['url'] }}" class="card-link stretched-link">
-              Lihat detail <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
+        <x-card-item
+          variant="kegiatan"
+          :img="$item['img']"
+          :alt="$item['alt']"
+          :meta="$item['tgl']"
+          :title="$item['judul']"
+          :desc="$item['desc']"
+          :url="$item['url']"
+          link-text="Lihat detail" />
       </div>
       @endforeach
 
@@ -87,22 +83,14 @@
   <div class="container">
     <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
 
-      <div class="filter-btns d-flex gap-2 flex-wrap">
-        <button class="filter-btn active" data-filter="semua">Semua</button>
-        <button class="filter-btn" data-filter="minggu">Minggu ini</button>
-        <button class="filter-btn" data-filter="bulan">Bulan ini</button>
-        <button class="filter-btn" data-filter="tahun">Tahun ini</button>
-      </div>
+      <x-filter-buttons variant="kegiatan" :options="[
+          ['label' => 'Semua', 'filter' => 'semua', 'active' => true],
+          ['label' => 'Minggu ini', 'filter' => 'minggu'],
+          ['label' => 'Bulan ini', 'filter' => 'bulan'],
+          ['label' => 'Tahun ini', 'filter' => 'tahun'],
+      ]" />
 
-      <div class="search-wrap">
-        <i class="bi bi-search"></i>
-        <input
-          type="text"
-          class="search-input"
-          placeholder="Cari Kegiatan"
-          id="searchInput"
-          aria-label="Cari kegiatan" />
-      </div>
+      <x-search-box variant="kegiatan" id="searchInput" placeholder="Cari Kegiatan" />
 
     </div>
   </div>
@@ -115,37 +103,33 @@
 
     @php
     $daftarKegiatan = [
-    ['img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
+    ['img' => 'https://images.unsplash.com/photo-1615441000196-cae8adec6ebe?q=80&w=764', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
     ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
-    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
-    ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
-    ['img' => 'https://images.unsplash.com/photo-1618671257827-5b55b0cd8b40?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
-    ['img' => 'https://images.unsplash.com/photo-1560275619-4cc5fa59d3ae?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
-    ['img' => 'https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
-    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
-    ['img' => 'https://images.unsplash.com/photo-1591025207163-942350e47db2?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
-    ['img' => 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
-    ['img' => 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
-    ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
+    ['img' => 'https://plus.unsplash.com/premium_photo-1694250866050-6153c23d112e?q=80&w=881', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
+    ['img' => 'https://plus.unsplash.com/premium_photo-1710673365954-4f943feb75ec?q=80&w=1074', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
+    ['img' => 'https://images.unsplash.com/photo-1615441000196-cae8adec6ebe?q=80&w=764', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
+    ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
+    ['img' => 'https://plus.unsplash.com/premium_photo-1694250866050-6153c23d112e?q=80&w=881', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
+    ['img' => 'https://plus.unsplash.com/premium_photo-1710673365954-4f943feb75ec?q=80&w=1074', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
+    ['img' => 'https://images.unsplash.com/photo-1615441000196-cae8adec6ebe?q=80&w=764', 'alt' => 'Penyelamatan Penyu', 'judul' => 'Penyelamatan Penyu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penyelamatan kembali penyu di area...', 'url' => route('kegiatan.show'), 'filter' => 'penyelamatan penyu'],
+    ['img' => 'https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&q=80', 'alt' => 'Studi Bintang Laut', 'judul' => 'Studi Bintang laut', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program studi bintang laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'studi bintang laut'],
+    ['img' => 'https://plus.unsplash.com/premium_photo-1694250866050-6153c23d112e?q=80&w=881', 'alt' => 'Eksplorasi Biota Laut','judul' => 'Eksplorasi biota laut','tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program eksplorasi biota laut di area...', 'url' => route('kegiatan.show'), 'filter' => 'eksplorasi biota laut'],
+    ['img' => 'https://plus.unsplash.com/premium_photo-1710673365954-4f943feb75ec?q=80&w=1074', 'alt' => 'Restorasi Terumbu', 'judul' => 'Restorasi Terumbu', 'tgl' => '12 Okt 2026 – 14 Okt 2026', 'desc' => 'Program penanaman kembali karang di area...', 'url' => route('kegiatan.show'), 'filter' => 'restorasi terumbu'],
     ];
     @endphp
 
-    <div class="row g-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="kegiatanGrid">
+    <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="kegiatanGrid">
       @foreach ($daftarKegiatan as $item)
       <div class="col kegiatan-item" data-title="{{ $item['filter'] }}">
-        <div class="card-kegiatan position-relative">
-          <div class="card-img-wrap">
-            <img src="{{ $item['img'] }}" alt="{{ $item['alt'] }}" loading="lazy" />
-          </div>
-          <div class="card-body">
-            <p class="card-date">{{ $item['tgl'] }}</p>
-            <h3 class="card-title-text">{{ $item['judul'] }}</h3>
-            <p class="card-desc">{{ $item['desc'] }}</p>
-            <a href="{{ $item['url'] }}" class="card-link stretched-link">
-              Lihat detail <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
+        <x-card-item
+          variant="kegiatan"
+          :img="$item['img']"
+          :alt="$item['alt']"
+          :meta="$item['tgl']"
+          :title="$item['judul']"
+          :desc="$item['desc']"
+          :url="$item['url']"
+          link-text="Lihat detail" />
       </div>
       @endforeach
     </div>
@@ -159,66 +143,11 @@
   </div>
 </section>
 
-<!-- Paginition -->
-<div class="pagination-wrap">
-  <button class="page-btn arrow" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
-  <button class="page-btn active" aria-current="page">1</button>
-  <button class="page-btn">2</button>
-  <button class="page-btn">3</button>
-  <button class="page-btn">4</button>
-  <button class="page-btn arrow" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
-</div>
+<x-pagination variant="kegiatan" :total-pages="4" />
 
 @endsection
 
 <!-- js -->
 @push('scripts')
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-
-    /* ── filter buttons ── */
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        filterBtns.forEach(function(b) {
-          b.classList.remove('active');
-        });
-        btn.classList.add('active');
-      });
-    });
-
-    /* ── Live search ── */
-    const searchInput = document.getElementById('searchInput');
-    const items = document.querySelectorAll('.kegiatan-item');
-    const emptyState = document.getElementById('emptyState');
-
-    searchInput.addEventListener('input', function() {
-      const q = searchInput.value.toLowerCase().trim();
-      let visible = 0;
-
-      items.forEach(function(item) {
-        const title = item.dataset.title || '';
-        const match = title.includes(q);
-        item.style.display = match ? '' : 'none';
-        if (match) visible++;
-      });
-
-      emptyState.classList.toggle('d-none', visible > 0);
-    });
-
-    /* ── Pagination active ── */
-    const pageBtns = document.querySelectorAll('.page-btn:not(.arrow)');
-    pageBtns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        pageBtns.forEach(function(b) {
-          b.classList.remove('active');
-          b.removeAttribute('aria-current');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-current', 'page');
-      });
-    });
-
-  });
-</script>
+<script src="{{ asset('js/kegiatan.js') }}"></script>
 @endpush
