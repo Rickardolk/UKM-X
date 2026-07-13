@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('user.home');
 });
 
-//layanan
+//user-layanan
 Route::get('/layanan/peminjaman-alat', function () {
     return view('user.layanan.sop-peminjaman');
 })->name('layanan.peminjaman');
@@ -23,7 +23,7 @@ Route::get('/layanan/kontak', function () {
     return view('user.layanan.contact');
 })->name('layanan.kontak');
 
-//pendaftaran
+//user-pendaftaran
 Route::get('/pendaftaran', function () {
     return view('user.daftar');
 })->name('pendaftaran.index');
@@ -33,7 +33,7 @@ Route::get('/profil', function () {
 })->name('profil.index');
 
 
-//Arsip
+//user-arsip
 Route::get('/arsip/publikasi', function () {
     return view('user.arsip.publikasi.menu-publikasi');
 })->name('arsip.index');
@@ -51,7 +51,7 @@ Route::get('/arsip/dokumentasi/outbound', function () {
 })->name('arsip.dokumentasi.show');
 
 
-//Kegiatan
+//user-Kegiatan
 Route::get('/kegiatan', function () {
     return view('user.kegiatan.menu-kegiatan');
 })->name('kegiatan.index');
@@ -60,7 +60,7 @@ Route::get('/kegiatan/eksplorasi-biota-laut', function () {
     return view('user.kegiatan.detail-kegiatan');
 })->name('kegiatan.show');
 
-//profile
+//user-profile
 Route::get('/profil', function () {
     return view('user.profile');
 })->name('profil.index');

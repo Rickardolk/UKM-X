@@ -399,3 +399,78 @@ footer a:hover {
 .social-icon:hover {
     background: var(--blue);
 }
+
+
+
+
+
+/* custom Pagination */
+.ukm-pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    margin-bottom: 2rem; /* Penambahan margin bottom sesuai permintaan */
+    gap: 8px; /* Jarak antar elemen diperkecil sedikit */
+}
+
+.ukm-pagination-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style Global Tombol & Angka */
+.ukm-page-nav,
+.ukm-page-num {
+    background: transparent;
+    border: none;
+    color: #1a1a2e;
+    font-size: 1rem; /* Ukuran font diperkecil */
+    font-weight: 600; 
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Kotak Angka (Squircle) */
+.ukm-page-num {
+    width: 40px; /* Ukuran kotak diperkecil */
+    height: 40px; 
+    border-radius: 12px; /* Kelengkungan disesuaikan dengan ukuran baru */
+    border: 2px solid transparent;
+}
+
+.ukm-page-num:hover:not(.active) {
+    background-color: #f8f9fa;
+}
+
+/* State Aktif (Garis Biru) */
+.ukm-page-num.active {
+    border-color: var(--blue);
+    color: #1a1a2e; 
+}
+
+/* Panah Navigasi Kiri Kanan */
+.ukm-page-nav {
+    font-size: 1.15rem; /* Ukuran ikon panah diperkecil */
+    padding: 0 8px;
+    -webkit-text-stroke: 1px #1a1a2e; /* Ketebalan ikon disesuaikan */
+}
+
+.ukm-page-nav:hover:not(.disabled) {
+    color: var(--blue);
+    -webkit-text-stroke: 1px var(--blue);
+}
+
+.ukm-page-nav.disabled {
+    color: #d1d5db;
+    -webkit-text-stroke: 1px #d1d5db;
+    pointer-events: none;
+    cursor: not-allowed;
+}

@@ -1,13 +1,20 @@
 :root {
-    --navy: #1A3A6B;
-    --navy-dark: #122852;
-    --blue: #2563EB;
-    --blue-light: #EEF4FF;
-    --blue-mid: #DBEAFE;
+    /* ── Color Palette ── */
+    --primary: #2563EB;
+    --secondary: #38BDF8;
+    --accent: #0EA5E9;
+    
+    --background: #FFFFFF;
+    --surface: #F0F6FF;
+    
     --text: #111827;
-    --muted: #6B7280;
+    --text-secondary: #4B5563;
+    
+    --success: #10B981;
+    --error: #EF4444;
+
+    /* ── Utilities ── */
     --border: #E5E7EB;
-    --white: #FFFFFF;
     --radius: 12px;
     --shadow: 0 2px 12px rgba(0, 0, 0, .08);
     --shadow-hover: 0 8px 28px rgba(37, 99, 235, .18);
@@ -326,7 +333,8 @@
 /* -- hero -- */
 .detail-keg__hero {
     position: relative;
-    padding: 4.5rem 0 4rem;
+    padding: 6rem 0 4rem;
+    height: 300px;
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -347,6 +355,10 @@
 }
 
 .detail-keg__kembali {
+    position: absolute;
+    top: -4rem;
+    left: .75rem;
+    z-index: 10;
     display: inline-flex;
     align-items: center;
     gap: .4rem;
@@ -358,7 +370,7 @@
     font-size: .88rem;
     font-weight: 600;
     text-decoration: none;
-    margin-bottom: 2.5rem;
+    /* margin-bottom: 2.5rem; */
     transition: background .2s ease, color .2s ease;
 }
 
@@ -381,21 +393,21 @@
 
 /* -- deskripsi -- */
 .detail-keg__desc-section {
-    padding: 3rem 0;
+    padding: 5rem 0 5rem;
     background: var(--white);
 }
 
-.detail-keg__desc-media {
+/* .detail-keg__desc-media {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 2.5rem;
     align-items: center;
-}
+} */
 
 .detail-keg__desc-img {
     border-radius: var(--radius);
     overflow: hidden;
-    min-height: 320px;
+    height: 324px;
 }
 
 .detail-keg__desc-img img {
@@ -422,7 +434,7 @@
 /* -- jadwal kegiatan -- */
 .detail-keg__jadwal {
     background: var(--blue-light);
-    padding: 3rem 0;
+    padding: 5rem 0;
 }
 
 .jadwal-item {
@@ -494,7 +506,7 @@
 
 /* -- tujuan & penanggung jawab -- */
 .detail-keg__info-grid {
-    padding: 3rem 0;
+    padding: 5rem 0;
     background: var(--white);
 }
 
@@ -502,6 +514,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
+    min-height: 29.5rem;
 }
 
 .detail-keg__info-block h2 {
@@ -522,7 +535,7 @@
 .detail-keg__info-block ol {
     color: var(--text);
     line-height: 1.75;
-    font-size: .95rem;
+    font-size: 1rem;
     margin: 0;
 }
 
