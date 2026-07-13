@@ -1,6 +1,6 @@
 @php
 $sejarah = [
-'img' => 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&q=80',
+'img' => 'https://images.unsplash.com/photo-1777583187888-af3ba93b3926?w=1170&q=80',
 'paragraf' => [
 'UKM X merupakan salah satu kelompok studi yang ada di lingkungan intern Fakultas Biologi X. Berdirinya kelompok studi ini diawali dengan terbentuknya Forum Studi Laut pada tahun 2000 oleh para mahasiswa biologi yang mempunyai minat dan kepedulian akan laut. Kemudian pada tanggal 19 September 2000, kelompok studi ini resmi didirikan dengan nama Kelompok Studi Laut Biologi dan menunjuk X sebagai Ketua Umum periode pertama.',
 'Pada MUSYANG II (Musyawarah Anggota) 19 September 2001, kelompok studi ini mengalami perubahan nama dari Kelompok Studi Laut menjadi Kelompok Studi Kelautan Fakultas Biologi X. Perubahan nama ini berkaitan dengan obyek kajian yang dikaji, yakni kelautan yang meliputi daerah pesisir dan laut.',

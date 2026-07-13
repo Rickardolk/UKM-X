@@ -1,35 +1,81 @@
-@extends('layouts.auth')
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Admin</title>
 
-@section('title', 'Login Admin - UKM X')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ asset('css/admin-login.css') }}" rel="stylesheet" />
+</head>
+<body>
 
-@push('styles')
-<link href="{{ asset('css/login.css') }}" rel="stylesheet" />
-@endpush
+    <div class="login-wrapper d-flex align-items-center justify-content-center min-vh-100">
+        <div class="login-card">
 
-@section('content')
-
-<div class="auth-page">
-    <div class="auth-card">
-        <h1 class="auth-card__title">Login Admin</h1>
-        <p class="auth-card__desc">
-            Masukkan email dan password sesuai untuk dapat mengakses dashboard admin
-        </p>
-
-        <form action="{{ route('admin.dashboard') }}" method="GET">
-            <div class="auth-field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="admin@UNIVX.ac.id" autocomplete="username" />
+            {{-- Heading --}}
+            <div class="text-center mb-4">
+                <h1 class="login-title">Login Admin</h1>
+                <p class="login-subtitle">
+                    Masukkan email dan password sesuai untuk<br>
+                    dapat mengakses dashboard admin
+                </p>
             </div>
 
-            <div class="auth-field">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
-                    autocomplete="current-password" />
-            </div>
+            {{-- Alert Error (jika login gagal) --}}
+            @if(session('error'))
+                <div class="alert alert-danger rounded-3 text-center py-2 small">
+                    {{ session('error') }}
+                </div>
+            @endif
 
-            <button type="submit" class="btn-auth-submit">Masuk</button>
-        </form>
+            {{-- Form --}}
+            <form method="POST" action="{{ route('admin.login.post') }}">
+                @csrf
+
+                {{-- Email --}}
+                <div class="mb-3">
+                    <label class="login-label" for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="login-input @error('email') is-invalid @enderror"
+                        placeholder="admin@UNIVX.ac.id"
+                        value="{{ old('email') }}"
+                        required
+                        autofocus
+                    />
+                    @error('email')
+                        <div class="invalid-feedback ps-2">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                {{-- Password --}}
+                <div class="mb-4">
+                    <label class="login-label" for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="login-input @error('password') is-invalid @enderror"
+                        placeholder="••••••••••••"
+                        required
+                    />
+                    @error('password')
+                        <div class="invalid-feedback ps-2">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                {{-- Button --}}
+                <button type="submit" class="login-btn w-100">
+                    Masuk
+                </button>
+
+            </form>
+        </div>
     </div>
-</div>
 
-@endsection
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
