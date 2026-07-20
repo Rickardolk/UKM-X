@@ -13,7 +13,7 @@
                     <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}" href="{{ route('kegiatan.index') }}">Kegiatan</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->is('arsip*') ? 'active' : '' }}"
+                    <a class="nav-link {{ request()->is('arsip*') ? 'active' : '' }}"
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"

@@ -29,7 +29,6 @@
         @yield('content')
     </main>
 
-    <!-- @include('components.footer') -->
      @if (!View::hasSection('hide_footer'))
         @include('components.footer')
     @endif

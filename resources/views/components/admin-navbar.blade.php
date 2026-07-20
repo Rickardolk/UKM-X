@@ -1,9 +1,12 @@
 <nav class="navbar admin-navbar sticky-top shadow-sm">
     <div class="container">
-        <a href="{{ route('admin.dashboard') }}" class="navbar-brand admin-navbar__brand text-decoration-none">UKM X</a>
+        <span class="navbar-brand admin-navbar__brand mb-0">UKM X</span>
 
-        <a href="{{ route('admin.login') }}" class="btn-keluar text-decoration-none">
-            <i class="bi bi-box-arrow-right"></i> Keluar
-        </a>
+        <form method="POST" action="{{ route('admin.logout') }}" class="mb-0">
+            @csrf
+            <button type="submit" class="btn-keluar">
+                <i class="bi bi-box-arrow-right"></i> Keluar
+            </button>
+        </form>
     </div>
 </nav>

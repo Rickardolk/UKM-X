@@ -16,51 +16,12 @@
 <body>
 
     {{-- ===== TOP NAVBAR ===== --}}
-    <nav class="admin-topbar">
-        <span class="admin-brand">UKM X</span>
-        <form method="POST" action="{{ route('admin.logout') }}">
-            @csrf
-            <button type="submit" class="btn-keluar">
-                <i class="bi bi-box-arrow-right"></i> Keluar
-            </button>
-        </form>
-    </nav>
+    @include('components.admin-navbar')
 
     <div class="admin-wrapper">
 
         {{-- ===== SIDEBAR ===== --}}
-        <aside class="admin-sidebar">
-
-            {{-- Profile --}}
-            <div class="sidebar-profile">
-                <div class="sidebar-avatar">
-                    <i class="bi bi-person-fill"></i>
-                </div>
-                <div>
-                    <div class="sidebar-name">Admin</div>
-                    <div class="sidebar-role">Portal Manjemen</div>
-                </div>
-            </div>
-
-            {{-- Nav Menu --}}
-            <nav class="sidebar-nav">
-                <a href="{{ route('admin.dashboard') }}"
-                    class="sidebar-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                    <i class="bi bi-grid-1x2-fill"></i> Dashboard
-                </a>
-                <a href="{{ route('admin.publikasi.index') }}"
-                    class="sidebar-link {{ request()->routeIs('admin.publikasi*') ? 'active' : '' }}">
-                    <i class="bi bi-book"></i> Publikasi
-                </a>
-                <a href="{{ route('admin.dokumentasi.index') }}"
-                    class="sidebar-link {{ request()->routeIs('admin.dokumentasi*') ? 'active' : '' }}">
-                    <i class="bi bi-tablet"></i> Dokumentasi
-                </a>
-                <a href="#" class="sidebar-link {{ request()->routeIs('admin.konten*') ? 'active' : '' }}">
-                    <i class="bi bi-plus-circle"></i> Konten
-                </a>
-            </nav>
-        </aside>
+        @include('components.admin-sidebar')
 
         {{-- ===== MAIN CONTENT ===== --}}
         <main class="admin-main">

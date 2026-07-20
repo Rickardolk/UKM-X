@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminDokumentasiController;
 use App\Http\Controllers\AdminPublikasiController;
+use App\Http\Controllers\AdminKontenController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -86,4 +87,15 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/dokumentasi/create', [AdminDokumentasiController::class, 'create'])->name('dokumentasi.create');
     Route::post('/dokumentasi',       [AdminDokumentasiController::class, 'store'])->name('dokumentasi.store');
+
+    Route::get('/dokumentasi/{id}/edit', [AdminDokumentasiController::class, 'edit'])->name('dokumentasi.edit');
+    Route::put('/dokumentasi/{id}',      [AdminDokumentasiController::class, 'update'])->name('dokumentasi.update');
+
+    Route::get('/konten', [AdminKontenController::class, 'index'])->name('konten.index');
+
+    Route::get('/konten/create', [AdminKontenController::class, 'create'])->name('konten.create');
+    Route::post('/konten', [AdminKontenController::class, 'store'])->name('konten.store');
+
+    Route::get('/konten/{id}/edit', [AdminKontenController::class, 'edit'])->name('konten.edit');
+    Route::put('/konten/{id}', [AdminKontenController::class, 'update'])->name('konten.update');
 });
