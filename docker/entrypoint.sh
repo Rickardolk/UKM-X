@@ -1,13 +1,6 @@
 #!/bin/sh
 set -e
 
-# ============================================================
-# entrypoint.sh
-# Dijalankan setiap kali container start di Render.
-# ============================================================
-
-# ---- Render menyediakan PORT secara dinamis lewat env var ----
-# Ganti placeholder 8080 di nginx.conf dengan PORT yang diberikan Render.
 if [ -n "$PORT" ]; then
     sed -i "s/listen 8080;/listen $PORT;/" /etc/nginx/http.d/default.conf
 fi
@@ -19,6 +12,16 @@ chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # ---- Generate APP_KEY otomatis kalau belum di-set di environment variables ----
 cd /var/www/html
+
+if [ ! -f .env ]; then
+    if [ -f .env.example ]; then
+        cp .env.example .env
+    else
+        touch .env
+    fi
+fi
+
+# ---- Generate APP_KEY otomatis kalau belum di-set di environment variables ----
 if [ -z "$APP_KEY" ]; then
     echo "APP_KEY belum di-set, generating..."
     php artisan key:generate --force
